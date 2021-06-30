@@ -179,10 +179,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  HAL_ADC_Start_IT(&hadc3);
 
-	  uint32_t state = HAL_ADC_GetState(&hadc3);
-
-	  while (state != HAL_ADC_STATE_READY || state != HAL_ADC_STATE_RESET) {
-		  state = HAL_ADC_GetState(&hadc3);
+	  while (((HAL_ADC_GetState(&hadc3) & HAL_ADC_STATE_REG_BUSY) != 0UL)) {
+		  __WFI();
 	  }
   }
   /* USER CODE END 3 */
