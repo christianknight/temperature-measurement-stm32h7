@@ -37,9 +37,7 @@ typedef struct tagTEMP_STRUCT {
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_MAX_COUNT         1023    /* 2^10 = 1024 */
 #define BANDGAP_VOLTAGE       1400    /* in mV */
-#define TEMPERATURE_HANDLE    hadc3
 
 /* USER CODE END PD */
 
